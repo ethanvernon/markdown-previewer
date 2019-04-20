@@ -12,7 +12,6 @@ const API_PORT = process.env.PORT || 3001;
 const path = require("path");
 const dbRoute = process.env.MONGO_URI;
 
-
 //other app.use middleware
 app.use(express.static(path.join(__dirname, "client", "build")));
 app.use(cors());

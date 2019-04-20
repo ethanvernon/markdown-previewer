@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 //this will be our data structure 
 var fileSchema = new Schema({    
-	name: {
+	passkey: {
 		type:String,
 		required: true
 	},
