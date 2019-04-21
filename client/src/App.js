@@ -1,51 +1,72 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { simpleAction } from './action-creators/simpleAction';
-import logo from './logo.svg';
+import { addMessage } from './action-creators/simpleAction';
 import './App.scss';
-
-const mapStateToProps = state => ({
-  ...state
-})
-
-const mapDispatchToProps = dispatch => ({
- simpleAction: () => dispatch(simpleAction())
-})
+import Title from './Title';
 
 class App extends Component {
+ constructor(props) {
+   super(props);
 
-    simpleAction = (event) => {
-     this.props.simpleAction();
-    }
+   this.state = {
+     input: ''
+   }
 
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+   this.handleChange = this.handleChange.bind(this);
+   this.submitMessage = this.submitMessage.bind(this);
+ }
 
-          <pre>
-             {
-              JSON.stringify(this.props)
-             }
-            </pre>
+ handleChange(event) {
+   this.setState({
+     input: event.target.value
+   });
+ }
 
-          <button onClick={this.simpleAction}>Test redux action</button>
-        </header>
-      </div>
-    );
-  }
-}
+ submitMessage() {
+   this.props.submitNewMessage(this.state.input);
+
+   this.setState({
+     input: ''
+   });
+ }
+
+ render() {
+   return (
+     <div>
+       <Title/>
+       <h2>Type in a new Message:</h2>
+       <input
+         value={this.state.input}
+         onChange={this.handleChange}/><br/>
+       <button onClick={this.submitMessage}>Submit</button>
+       <ul>{
+         this.props.messages.map( (message, idx) => {
+           return (
+             <li key={idx}>{message}</li>
+           )
+         })
+       }
+       </ul>
+     </div>
+   );
+ }
+};
+
+const mapStateToProps = ({ messages }) => {
+  /**
+   * Destructuring out messages from state and assigning it to the key
+   * messages, since the key and value are bother the same you can leave out
+   * messages: messages and just have messages, both are the same
+   */
+  return { messages }
+};
+
+const mapDispatchToProps = (dispatch) => {
+ return {
+   submitNewMessage: (message) => {
+     dispatch(addMessage(message))
+   }
+ }
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
