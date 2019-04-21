@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { addMessage } from './action-creators/simpleAction';
 import './App.scss';
 import Title from './Title';
+import {Header} from './Header';
 
 class App extends Component {
  constructor(props) {
@@ -30,26 +31,27 @@ class App extends Component {
    });
  }
 
- render() {
-   return (
-     <div>
-       <Title/>
-       <h2>Type in a new Message:</h2>
-       <input
-         value={this.state.input}
-         onChange={this.handleChange}/><br/>
-       <button onClick={this.submitMessage}>Submit</button>
-       <ul>{
-         this.props.messages.map( (message, idx) => {
-           return (
-             <li key={idx}>{message}</li>
-           )
-         })
-       }
-       </ul>
-     </div>
-   );
- }
+	render() {
+		return (
+			<div>
+				<Header/>
+				<Title/>
+				<h2>Type in a new Message:</h2>
+				<input
+				value={this.state.input}
+				onChange={this.handleChange}/><br/>
+				<button onClick={this.submitMessage}>Submit</button>
+				<ul>{
+				this.props.messages.map( (message, idx) => {
+				return (
+				<li key={idx}>{message}</li>
+				)
+				})
+				}
+				</ul>
+			</div>
+		);
+	}
 };
 
 const mapStateToProps = ({ messages }) => {
