@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { addMessage } from './action-creators/simpleAction';
 import './App.scss';
 import Title from './Title';
+import Name from './Name';
 import {Header} from './Header';
 
 class App extends Component {
@@ -34,8 +35,9 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<Header/>
-				<Title/>
+				<Header />
+				<Title />
+				<Name />
 				<h2>Type in a new Message:</h2>
 				<input
 				value={this.state.input}

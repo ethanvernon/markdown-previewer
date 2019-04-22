@@ -14,3 +14,10 @@ export const changeTitle = (title) => {
 		title: title
 	}
 };
+
+export const changeDocName = (name) => {
+	return {
+		type: CHANGE,
+		name: name
+	}
+}

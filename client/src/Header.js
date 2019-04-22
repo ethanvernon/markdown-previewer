@@ -43,19 +43,19 @@ export class Header extends Component {
 				<Collapse isOpen={this.state.isOpen} navbar>
 					<Nav navbar className='ml-auto'>
 						<NavItem>
-							<a href="">Link</a>{/*<Link to="/" className='padded-nav' onClick={this.closeNav} > Home </Link>*/}
+							<span>Link</span>{/*<Link to="/" className='padded-nav' onClick={this.closeNav} > Home </Link>*/}
 						</NavItem>
 
 						<NavItem>
-							<a href="">Link</a>{/*<Link to="/documentation" className='padded-nav' onClick={this.closeNav} > Documentation </Link>*/}
+							<span>Link</span>{/*<Link to="/documentation" className='padded-nav' onClick={this.closeNav} > Documentation </Link>*/}
 						</NavItem>
 
 						<NavItem>
-							<a href="">Link</a>{/*<Link to='/log' to="/log" className='padded-nav' onClick={this.closeNav} > Log Exercise</Link>*/}
+							<span>Link</span>{/*<Link to='/log' to="/log" className='padded-nav' onClick={this.closeNav} > Log Exercise</Link>*/}
 						</NavItem>
 
 						<NavItem>
-							<a href="">Link</a>{/*<Link to='/signup' to="/signup" className='padded-nav' onClick={this.closeNav} > Sign Up </Link>*/}
+							<span>Link</span>{/*<Link to='/signup' to="/signup" className='padded-nav' onClick={this.closeNav} > Sign Up </Link>*/}
 						</NavItem>
 					</Nav>
 				</Collapse>
