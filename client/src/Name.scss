@@ -1,0 +1,23 @@
+$gray: #888;
+$black: #444;
+$labelSize:11px;
+
+.name {
+  margin-top:15px;
+  margin-left:20px;
+  color: $gray;
+  font-size: $labelSize;
+  letter-spacing:1px;
+  margin-bottom:0px;
+  p {
+    margin-bottom:10px;
+  }
+  input {
+    color: $black;
+    border:0px;
+    font-size:17px;
+  }
+  input:focus {
+    outline:none;
+  }
+}

@@ -36,8 +36,8 @@ class App extends Component {
 		return (
 			<div>
 				<Header />
-				<Title />
 				<Name />
+				<Title />
 				<h2>Type in a new Message:</h2>
 				<input
 				value={this.state.input}

@@ -1,5 +1,6 @@
 export const ADD = 'ADD';
 export const CHANGE = 'CHANGE';
+export const CHANGENAME = 'CHANGENAME';
 
 export const addMessage = (message) => {
 	return {
@@ -15,9 +16,9 @@ export const changeTitle = (title) => {
 	}
 };
 
-export const changeDocName = (name) => {
+export const changeName = (name) => {
 	return {
-		type: CHANGE,
+		type: CHANGENAME,
 		name: name
 	}
 }
