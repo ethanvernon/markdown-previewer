@@ -22,8 +22,8 @@ class Markdown extends Component {
 		return (
 			<Container className='markdown'>
 				<Row noGutters>			
-					<Col xs="6" ><textarea id='user-md' rows="20" value={this.props.userMarkdown.userMarkdown} onChange={this.handleChange}/></Col>
-					<Col xs="6">.col-6</Col>
+					<Col md="6" ><textarea id='user-md' rows="20" value={this.props.userMarkdown.userMarkdown} onChange={this.handleChange}/></Col>
+					<Col md="6">.col-6</Col>
 				</Row>
 			</Container>
 		);
