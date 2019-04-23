@@ -5,6 +5,7 @@ import './App.scss';
 import Title from './Title';
 import Name from './Name';
 import {Header} from './Header';
+import Markdown from './Markdown';
 
 class App extends Component {
  constructor(props) {
@@ -37,7 +38,7 @@ class App extends Component {
 			<div>
 				<Header />
 				<Name />
-				<Title />
+				<Markdown />
 				<h2>Type in a new Message:</h2>
 				<input
 				value={this.state.input}

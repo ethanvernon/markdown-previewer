@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.scss';
+import './Header.scss';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {

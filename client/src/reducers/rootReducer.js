@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { messageReducer, titleReducer, nameReducer } from './messageReducer';
+import { messageReducer, titleReducer, nameReducer, markdownReducer } from './messageReducer';
 
 /**
  * Usually when exporting combineReducers you give a key for each reducer,
@@ -8,5 +8,6 @@ import { messageReducer, titleReducer, nameReducer } from './messageReducer';
 export const rootReducer = combineReducers({
 	messages: messageReducer,
 	title: titleReducer,
-	docName: nameReducer
+	docName: nameReducer,
+	userMarkdown: markdownReducer
 });
