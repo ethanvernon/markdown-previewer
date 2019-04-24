@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { updateOutputBox } from './action-creators/simpleAction';
 import './Markdown.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col } from 'reactstrap';
@@ -16,7 +15,7 @@ class OutputBox extends Component {
 	}
 
 	setMarkdownDispaly() {
-		let rawMarkup=marked(this.props.markdownDisplay.markdownDisplay, {sanitize:true});
+		let rawMarkup=marked(this.props.userMarkdown.userMarkdown, {sanitize:true});
 		return { __html: rawMarkup };
 	}
 
@@ -30,21 +29,13 @@ class OutputBox extends Component {
 	}
 }
 
-const mapStateToProps = ({ markdownDisplay }) => {
+const mapStateToProps = ({ userMarkdown }) => {
 
 	// Destructuring out messages from state and assigning it to the key
 	// messages, since the key and value are bother the same you can leave out
 	// messages: messages and just have messages, both are the same
    
-	return { markdownDisplay }
+	return { userMarkdown }
 };
 
-const mapDispatchToProps = (dispatch) => {
-	return {
-		updateOutputBox: (markdownOuput) => {
-			dispatch(updateOutputBox(markdownOuput))
-		}
-	}
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(OutputBox);
+export default connect(mapStateToProps, null)(OutputBox);

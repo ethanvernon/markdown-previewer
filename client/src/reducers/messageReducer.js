@@ -88,14 +88,3 @@ export const markdownReducer = (state = {userMarkdown: defaultMarkdown}, action)
 			return state;
 	}
 };
-
-export const outputReducer = (state = {markdownDisplay: 'This is _Markdown_.'}, action) => {
-	switch (action.type) {
-		case UPDATE:
-			// don't mutate state here
-			var newOutput = {markdownDisplay: action.markdownOuput};
-			return Object.assign({}, state, newOutput);
-		default:
-			return state;
-	}
-};

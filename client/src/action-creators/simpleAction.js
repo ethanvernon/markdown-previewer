@@ -2,7 +2,6 @@ export const ADD = 'ADD';
 export const CHANGE = 'CHANGE';
 export const CHANGENAME = 'CHANGENAME';
 export const CHANGEMARKDOWN = 'CHANGEMARKDOWN';
-export const UPDATE = 'UPDATE';
 
 export const addMessage = (message) => {
 	return {
@@ -29,12 +28,5 @@ export const changeMarkdown = (markdown) => {
 	return {
 		type: CHANGEMARKDOWN,
 		markdown: markdown
-	}
-}
-
-export const updateOutputBox = (markdownOuput) => {
-	return {
-		type: UPDATE,
-		markdownOuput: markdownOuput
 	}
 }
