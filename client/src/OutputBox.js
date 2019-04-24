@@ -4,6 +4,7 @@ import { updateOutputBox } from './action-creators/simpleAction';
 import './Markdown.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col } from 'reactstrap';
+import marked from 'marked';
 
 class OutputBox extends Component {
 	constructor(props) {
@@ -11,19 +12,18 @@ class OutputBox extends Component {
 
 		// this.handleChange = this.handleChange.bind(this);
 		// this.submitTitle = this.submitTitle.bind(this);
-		//this.handleChange = this.handleChange.bind(this);
+		this.setMarkdownDispaly = this.setMarkdownDispaly.bind(this);
 	}
 
-	handleChange(event) {
-		//this.props.changeMarkdown(event.target.value);
+	setMarkdownDispaly() {
+		let rawMarkup=marked(this.props.markdownDisplay.markdownDisplay, {sanitize:true});
+		return { __html: rawMarkup };
 	}
 
 	render() {
 		return (	
 			<Col md="6" >
-				<div class='markdown-output'>
-					{this.props.markdownDisplay.markdownDisplay}
-				</div>
+				<div class='markdown-output' dangerouslySetInnerHTML={this.setMarkdownDispaly()} />
 			</Col>
 					
 		);

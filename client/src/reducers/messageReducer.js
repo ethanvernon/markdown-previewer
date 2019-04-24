@@ -89,7 +89,7 @@ export const markdownReducer = (state = {userMarkdown: defaultMarkdown}, action)
 	}
 };
 
-export const outputReducer = (state = {markdownDisplay: 'hey I am markdown output'}, action) => {
+export const outputReducer = (state = {markdownDisplay: 'This is _Markdown_.'}, action) => {
 	switch (action.type) {
 		case UPDATE:
 			// don't mutate state here
