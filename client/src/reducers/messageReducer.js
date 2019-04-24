@@ -1,4 +1,4 @@
-import { ADD, CHANGE, CHANGENAME, CHANGEMARKDOWN } from '../action-creators/simpleAction';
+import { ADD, CHANGE, CHANGENAME, CHANGEMARKDOWN, UPDATE } from '../action-creators/simpleAction';
 
 var defaultMarkdown = `# Welcome to my React Markdown Previewer!
 
@@ -84,6 +84,17 @@ export const markdownReducer = (state = {userMarkdown: defaultMarkdown}, action)
 			// don't mutate state here
 			var newMarkdown = {userMarkdown: action.markdown};
 			return Object.assign({}, state, newMarkdown);
+		default:
+			return state;
+	}
+};
+
+export const outputReducer = (state = {markdownDisplay: 'hey I am markdown output'}, action) => {
+	switch (action.type) {
+		case UPDATE:
+			// don't mutate state here
+			var newOutput = {markdownDisplay: action.markdownOuput};
+			return Object.assign({}, state, newOutput);
 		default:
 			return state;
 	}

@@ -6,6 +6,8 @@ import Title from './Title';
 import Name from './Name';
 import {Header} from './Header';
 import Markdown from './Markdown';
+import OutputBox from './OutputBox';
+import { Container, Row } from 'reactstrap';
 
 class App extends Component {
  constructor(props) {
@@ -38,7 +40,14 @@ class App extends Component {
 			<div>
 				<Header />
 				<Name />
-				<Markdown />
+				<Container className='markdown'>
+					<Row noGutters>	
+						<Markdown />
+						<OutputBox />
+					</Row>
+				</Container>
+
+
 				<h2>Type in a new Message:</h2>
 				<input
 				value={this.state.input}
