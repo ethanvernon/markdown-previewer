@@ -31,12 +31,7 @@ class Markdown extends Component {
 	}
 }
 
-const mapStateToProps = ({ userMarkdown }) => {
-
-	// Destructuring out messages from state and assigning it to the key
-	// messages, since the key and value are bother the same you can leave out
-	// messages: messages and just have messages, both are the same
-   
+const mapStateToProps = ({ userMarkdown }) => {   
 	return { userMarkdown }
 };
 

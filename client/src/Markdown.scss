@@ -4,6 +4,7 @@
 	border:1px solid $gray;
 	padding:5px;
 	width:100%;
+	resize: none;
 }
 
 .markdown-output {
@@ -20,3 +21,24 @@
 	padding:7px;
 	font-size:13px
 }
+
+.markdown-output {
+	blockquote {
+		border-left: 3px solid $black;
+		color: #gray;
+		padding-left: 5px;
+		margin-left: 25px;
+	}
+
+	table {
+		border-collapse: collapse;
+	}
+
+	td,
+	th {
+		border: 2px solid $black;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+}
+

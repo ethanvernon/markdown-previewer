@@ -7,8 +7,6 @@ class Name extends Component {
 	constructor(props) {
 		super(props);
 
-		// this.handleChange = this.handleChange.bind(this);
-		// this.submitTitle = this.submitTitle.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 	}
 
@@ -26,12 +24,7 @@ class Name extends Component {
 	}
 }
 
-const mapStateToProps = ({ docName }) => {
-
-	// Destructuring out messages from state and assigning it to the key
-	// messages, since the key and value are bother the same you can leave out
-	// messages: messages and just have messages, both are the same
-   
+const mapStateToProps = ({ docName }) => {   
 	return { docName }
 };
 

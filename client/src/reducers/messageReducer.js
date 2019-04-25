@@ -1,9 +1,9 @@
-import { ADD, CHANGE, CHANGENAME, CHANGEMARKDOWN, UPDATE } from '../action-creators/simpleAction';
+import { CHANGENAME, CHANGEMARKDOWN } from '../action-creators/simpleAction';
 
-var defaultMarkdown = `# Welcome to my React Markdown Previewer!
+var defaultMarkdown = `# Welcome to my React/Redux Markdown Previewer!
 
 ## This is a sub-heading...
-### And here's some other cool stuff:
+### I also used SASS
   
 Heres some code, \`<div></div>\`, between 2 backticks.
 
@@ -41,31 +41,11 @@ And here. | Okay. | I think we get it.
 1. And there are numbererd lists too.
 1. Use just 1s if you want! 
 1. But the list goes on...
-- Even if you use dashes or asterisks.
-* And last but not least, let's not forget embedded images:
+
+And last but not least, let's not forget embedded images:
 
 ![React Logo w/ Text](https://goo.gl/Umyytc)
 `;
-
-export const messageReducer = (state = ['hey'], action) => {
-	switch (action.type) {
-		case ADD:
-			return [...state, action.message];
-		default:
-			return state;
-	}
-};
-
-export const titleReducer = (state = {title: 'My title'}, action) => {
-	switch (action.type) {
-		case CHANGE:
-			// don't mutate state here
-			var newObject = {title: action.title};
-			return Object.assign({}, state, newObject);
-		default:
-			return state;
-	}
-};
 
 export const nameReducer = (state = {docName: 'Untitled Document'}, action) => {
 	switch (action.type) {
