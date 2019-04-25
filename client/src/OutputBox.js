@@ -22,7 +22,10 @@ class OutputBox extends Component {
 	render() {
 		return (	
 			<Col md="6" >
-				<div class='markdown-output' dangerouslySetInnerHTML={this.setMarkdownDispaly()} />
+				<div className='label'>
+					PREVIEW
+				</div>
+				<div className='markdown-output' dangerouslySetInnerHTML={this.setMarkdownDispaly()} />
 			</Col>
 					
 		);

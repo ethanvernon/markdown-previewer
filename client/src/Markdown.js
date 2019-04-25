@@ -21,6 +21,9 @@ class Markdown extends Component {
 	render() {
 		return (	
 			<Col md="6" >
+				<div className='label'>
+					MARKDOWN
+				</div>
 				<textarea id='user-md' rows="20" value={this.props.userMarkdown.userMarkdown} onChange={this.handleChange}/>
 			</Col>
 					
