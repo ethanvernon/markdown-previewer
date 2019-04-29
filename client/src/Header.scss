@@ -4,6 +4,23 @@ $menuGray: #a0aabf;
 	color: $menuGray;
 	font-size: 14px;
 	.nav-item {
-		padding:5.5px;
+		padding:8.5px;
 	}
+}
+
+.nav-item a {
+	color: #f6da00;
+	font-size:16px;
+	font-weight:600;
+	letter-spacing:.4px;
+	border: 2px solid #f6da00;
+	border-radius:10px;
+	padding:8px;
+}
+
+.nav-item a:hover {
+	text-decoration:none;
+	color: #343a40;	
+	border: 2px solid #343a40;
+	background-color: #f6da00;
 }

@@ -12,53 +12,17 @@ import {
 export class Header extends Component {
 	constructor(props) {
 		super(props);
-
-		this.state = {
-		isOpen: false
-		};
-
-		this.toggle = this.toggle.bind(this);
-		this.closeNav = this.closeNav.bind(this);
 	}
-
-
-	toggle() {
-		this.setState({
-			isOpen: !this.state.isOpen
-		});
-	}
-
-	closeNav() {
-		if (this.state.isOpen == true) {
-			this.toggle();
-		}
-	}
-
 
 	render() {
 	return (
 		<div className='navbar-container'>
 			<Navbar id='white-nav' color='dark' light expand='md'>
-				<NavbarToggler onClick={this.toggle} className='mr-2'/>
-				<Collapse isOpen={this.state.isOpen} navbar>
 					<Nav navbar className='ml-auto'>
 						<NavItem>
-							<span>Link</span>{/*<Link to="/" className='padded-nav' onClick={this.closeNav} > Home </Link>*/}
-						</NavItem>
-
-						<NavItem>
-							<span>Link</span>{/*<Link to="/documentation" className='padded-nav' onClick={this.closeNav} > Documentation </Link>*/}
-						</NavItem>
-
-						<NavItem>
-							<span>Link</span>{/*<Link to='/log' to="/log" className='padded-nav' onClick={this.closeNav} > Log Exercise</Link>*/}
-						</NavItem>
-
-						<NavItem>
-							<span>Link</span>{/*<Link to='/signup' to="/signup" className='padded-nav' onClick={this.closeNav} > Sign Up </Link>*/}
+							<a href="http://fromgaming.com/" target='__blank'>Contact me</a>
 						</NavItem>
 					</Nav>
-				</Collapse>
 			</Navbar>
 		</div>
     );

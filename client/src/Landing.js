@@ -20,7 +20,8 @@ export class Landing extends Component {
 
 			<div className='main' id='main'>
 				<div className='statement'>
-					<h1>Preview Your Markup Text as You Make It, and Save Your Work to Our Database</h1>
+					<h1>Preview Your Markdown Text as You Type</h1>
+					<h2>This free markup editor allows you to live preview and save your markdown text</h2>
 				</div>
 			</div>
 			
