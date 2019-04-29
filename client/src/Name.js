@@ -18,7 +18,7 @@ class Name extends Component {
 		return (
 		<div className='name'>
 			<p>DOCUMENT NAME</p>
-			<input value={this.props.docName.docName} onChange={this.handleChange}/>
+			<input className='user-text-box' value={this.props.docName.docName} onChange={this.handleChange}/>
 		</div>
 		);
 	}

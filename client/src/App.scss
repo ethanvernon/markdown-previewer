@@ -23,6 +23,19 @@
   color: #61dafb;
 }
 
+.markdown {
+  max-width:1200px;
+  margin-left:15px;
+  margin-right:15px;
+}
+
+@media (min-width: 1230px) {
+  .markdown {
+    margin-left:auto;
+    margin-right:auto;
+  }
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -31,3 +44,4 @@
     transform: rotate(360deg);
   }
 }
+

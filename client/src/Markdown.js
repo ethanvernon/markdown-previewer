@@ -24,7 +24,7 @@ class Markdown extends Component {
 				<div className='label'>
 					MARKDOWN
 				</div>
-				<textarea id='user-md' rows="20" value={this.props.userMarkdown.userMarkdown} onChange={this.handleChange}/>
+				<textarea id='user-md' value={this.props.userMarkdown.userMarkdown} onChange={this.handleChange}/>
 			</Col>
 					
 		);

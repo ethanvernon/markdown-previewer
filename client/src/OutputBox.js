@@ -13,14 +13,14 @@ class OutputBox extends Component {
 	}
 
 	setMarkdownDispaly() {
-		let rawMarkup=marked(this.props.userMarkdown.userMarkdown, {sanitize:true, breaks:true, gfm:true});
+		let rawMarkup=marked(this.props.userMarkdown.userMarkdown, {sanitize:true, breaks:true});
 		return { __html: rawMarkup };
 	}
 
 	render() {
 		return (	
 			<Col md="6" >
-				<div className='label'>
+				<div className='label preview-label'>
 					PREVIEW
 				</div>
 				<div className='markdown-output' dangerouslySetInnerHTML={this.setMarkdownDispaly()} />

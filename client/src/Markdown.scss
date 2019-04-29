@@ -1,10 +1,12 @@
 @import 'Name';
+$box-height: calc(100vh - 167px);
 
 #user-md {
 	border:1px solid $gray;
 	padding:5px;
 	width:100%;
-	resize: none;
+	resize: none;	
+	height: $box-height;
 }
 
 .markdown-output {
@@ -12,12 +14,13 @@
 	padding:5px;
 	width:100%;
 	overflow-y: scroll;
-	max-height:492px;
+	height: $box-height;
 }
 
 .label {
 	color:$gray;
 	border: 1px solid $gray;
+	border-bottom:0px;
 	padding:7px;
 	font-size:13px
 }
@@ -25,9 +28,11 @@
 .markdown-output {
 	blockquote {
 		border-left: 3px solid $black;
-		color: #gray;
+		color: $black;
+		background: #eee;
 		padding-left: 5px;
-		margin-left: 25px;
+		margin-left: 10px;
+		margin-right:10px;
 	}
 
 	table {
@@ -40,5 +45,32 @@
 		padding-left: 5px;
 		padding-right: 5px;
 	}
+
+	code {
+		background: #eee;
+		width:100%;
+		padding:2px;
+	}
+
+	pre {
+		background: #eee;
+		margin-left:10px;
+		margin-right:10px;
+		padding:4px;
+	}
+
+	table {
+		margin-bottom:15px;
+		margin-top:15px;
+	}
 }
 
+@media (min-width: 768px) {
+  .markdown-output {
+    border-left:0px;
+  }
+
+  .preview-label {
+  	border-left:0px;
+  }
+}

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-//this will be our data structure 
+//this is data structure for saving markdown to database
 var fileSchema = new Schema({    
 	passkey: {
 		type:String,

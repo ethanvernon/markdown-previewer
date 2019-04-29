@@ -6,6 +6,7 @@ import {Header} from './Header';
 import Markdown from './Markdown';
 import OutputBox from './OutputBox';
 import { Container, Row } from 'reactstrap';
+import { Landing } from './Landing';
 
 class App extends Component {
 	constructor(props) {
@@ -20,11 +21,14 @@ class App extends Component {
 		return (
 			<div>
 				<Header />
+				<Landing />
 				<Name />
+				<div className='markdown'>
 					<Row noGutters>	
 						<Markdown />
 						<OutputBox />
 					</Row>
+				</div>
 			</div>
 		);
 	}
