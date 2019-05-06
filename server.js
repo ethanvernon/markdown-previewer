@@ -37,9 +37,8 @@ app.post("/api/new-file", function(req,res) {
 	let randomKey=generate()+generate()+generate();
 
 	var fileToAdd = new Files({
-		user: req.body.user,
 		passkey: randomkey,
-		code: req.body.code
+		markdown: req.body.markdown
 	});
 
 	fileToAdd.save((err, response) => {
@@ -49,9 +48,8 @@ app.post("/api/new-file", function(req,res) {
 		}
 		console.log("success, response is: " + response);
 		let condensedResponse = {
-			"user": response.user,
 			"passkey": response.passkey,
-			"code": response.code
+			"markdown": response.markdown
 		};
 		return res.json(condensedResponse);
 	});

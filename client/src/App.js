@@ -8,6 +8,7 @@ import OutputBox from './OutputBox';
 import { Container, Row } from 'reactstrap';
 import { Landing } from './Landing';
 import { Footer } from './Footer';
+import SaveButton from './SaveButton';
 
 class App extends Component {
 	constructor(props) {
@@ -24,6 +25,7 @@ class App extends Component {
 				<Header />
 				<Landing />
 				<Name />
+				<SaveButton />
 				<div className='markdown'>
 					<Row noGutters>	
 						<Markdown />

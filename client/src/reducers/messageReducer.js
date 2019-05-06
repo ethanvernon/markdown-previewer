@@ -1,4 +1,4 @@
-import { CHANGENAME, CHANGEMARKDOWN } from '../action-creators/simpleAction';
+import { CHANGENAME, CHANGEMARKDOWN, PUT_MARKDOWN_SUCCESS, PUT_MARKDOWN_FAILURE, PUT_MARKDOWN_STARTED } from '../action-creators/simpleAction';
 
 var defaultMarkdown = `# Welcome to my React/Redux Markdown Previewer!
 
@@ -68,3 +68,28 @@ export const markdownReducer = (state = {userMarkdown: defaultMarkdown}, action)
 			return state;
 	}
 };
+
+export const putMarkdownReducer = (state = {loading: false, markdown: [], error: null}, action) => {
+  switch (action.type) {
+    case PUT_MARKDOWN_STARTED:
+      return {
+        ...state,
+        loading: true
+      };
+    case PUT_MARKDOWN_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        error: null,
+        markdown: [...state.markdown, action.payload]
+      };
+    case PUT_MARKDOWN_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload.error
+      };
+    default:
+      return state;
+  }
+}
