@@ -7,11 +7,7 @@ var fileSchema = new Schema({
 		type:String,
 		required: true
 	},
-	user: {
-		type:String,
-		required: true
-	},
-	code: {
+	markdown: {
 		type:String,
 		required:true
 	}

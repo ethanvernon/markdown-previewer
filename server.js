@@ -37,7 +37,7 @@ app.post("/api/new-file", function(req,res) {
 	let randomKey=generate()+generate()+generate();
 
 	var fileToAdd = new Files({
-		passkey: randomkey,
+		passkey: randomKey,
 		markdown: req.body.markdown
 	});
 
