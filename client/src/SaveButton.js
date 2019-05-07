@@ -11,20 +11,41 @@ class SaveButton extends Component {
 	}
 
 	handleClick() {
+		console.log(this.props);
 		this.props.putMarkdown(this.props.userMarkdown.userMarkdown);
 	}
 
 	render() {
+		const isLoading = this.props.loading;
+		let button;
+
+		if (isLoading) {
+			button = (
+				 <Button color='primary'>
+				 	Saving...
+				 </Button>
+			);
+		} else {
+			button = (
+				<Button color='primary' onClick={this.handleClick}>
+					Save
+				</Button>
+			);
+		}
+
 		return (
-			<Button color='primary' onClick={this.handleClick}>
-				Save
-			</Button>
+			<div>
+				{ button }
+			</div>
 		);
 	}
 };
 
-const mapStateToProps = ({ userMarkdown }) => {   
-	return { userMarkdown }
+const mapStateToProps = ( state ) => {   
+	return { 
+		userMarkdown: state.userMarkdown,
+		loading: state.changeMarkdown.loading
+	}
 };
 
 const mapDispatchToProps = (dispatch) => {
