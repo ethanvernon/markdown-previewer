@@ -2,6 +2,7 @@ import axios from "axios";
 
 export const CHANGENAME = 'CHANGENAME';
 export const CHANGEMARKDOWN = 'CHANGEMARKDOWN';
+export const CHANGEPASSKEY = 'CHANGEPASSKEY';
 export const PUT_MARKDOWN_SUCCESS = 'PUT_MARKDOWN_SUCCESS';
 export const PUT_MARKDOWN_FAILURE = 'PUT_MARKDOWN_FAILURE';
 export const PUT_MARKDOWN_STARTED = 'PUT_MARKDOWN_STARTED';
@@ -17,6 +18,13 @@ export const changeMarkdown = (markdown) => {
 	return {
 		type: CHANGEMARKDOWN,
 		markdown: markdown
+	}
+}
+
+export const changePasskey = (passkey) => {
+	return {
+		type: CHANGEPASSKEY,
+		passkey: passkey
 	}
 }
 

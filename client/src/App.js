@@ -9,6 +9,7 @@ import { Container, Row } from 'reactstrap';
 import { Landing } from './Landing';
 import { Footer } from './Footer';
 import SaveButton from './SaveButton';
+import Passkey from './Passkey';
 
 class App extends Component {
 	constructor(props) {
@@ -28,6 +29,7 @@ class App extends Component {
 					<Row>
 						<Name />
 						<SaveButton />
+						<Passkey />
 					</Row>
 				</div>
 				<div className='markdown'>

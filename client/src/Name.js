@@ -16,12 +16,8 @@ class Name extends Component {
 	}
 
 	render() {
-		let docKey = this.props.result;
-		let keySpan;
-
-		if(docKey) {
-			keySpan = <span>(document key: {this.props.result.passkey})</span>
-		}
+		let keySpan = <span>(document key: {this.props.result.passkey})</span>;
+		
 
 		return (
 			<Col>
