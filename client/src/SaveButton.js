@@ -20,7 +20,6 @@ class SaveButton extends Component {
 		let button;
 
 		if (isLoading) {
-			console.log(this.props.result);
 			button = (
 				 <Button color='primary'>
 				 	Saving...
@@ -45,8 +44,7 @@ class SaveButton extends Component {
 const mapStateToProps = ( state ) => {   
 	return { 
 		userMarkdown: state.userMarkdown,
-		loading: state.changeMarkdown.loading,
-		result: state.changeMarkdown.markdown[state.changeMarkdown.markdown.length-1]
+		loading: state.changeMarkdown.loading
 	}
 };
 

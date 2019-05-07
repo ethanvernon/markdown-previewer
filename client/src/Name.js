@@ -15,17 +15,27 @@ class Name extends Component {
 	}
 
 	render() {
+		let docKey = this.props.result;
+		let keySpan;
+
+		if(docKey) {
+			keySpan = <span>(document key: {this.props.result.passkey})</span>
+		}
+
 		return (
 		<div className='name'>
-			<p>DOCUMENT NAME</p>
+			<p>DOCUMENT NAME {keySpan}</p>
 			<input className='user-text-box' value={this.props.docName.docName} onChange={this.handleChange}/>
 		</div>
 		);
 	}
 }
 
-const mapStateToProps = ({ docName }) => {   
-	return { docName }
+const mapStateToProps = ( state ) => {   
+	return { 
+		docName: state.docName,		
+		result: state.changeMarkdown.markdown[state.changeMarkdown.markdown.length-1]
+	}
 };
 
 const mapDispatchToProps = (dispatch) => {
