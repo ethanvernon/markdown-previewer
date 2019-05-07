@@ -1,3 +1,7 @@
+$gray: #AAA;
+$black: #444;
+$labelSize:11px;
+
 .App {
   text-align: center;
 }
@@ -77,4 +81,27 @@
 
 .back-top:hover {
   cursor:pointer;
+}
+
+.name {
+  margin-top:15px;
+  margin-left:40px;
+  color: $gray;
+  font-size: $labelSize;
+  letter-spacing:1px;
+  margin-bottom:20px;
+  .user-text-box {
+    margin-left:7px;
+  }
+  p {
+    margin-bottom:1px;
+  }
+  input {
+    color: $black;
+    border:0px;
+    font-size:17px;
+  }
+  input:focus {
+    outline:none;
+  }
 }

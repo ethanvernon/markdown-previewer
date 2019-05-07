@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { changeName } from './action-creators/simpleAction';
-import './Name.scss';
+import './App.scss';
 
 class Name extends Component {
 	constructor(props) {

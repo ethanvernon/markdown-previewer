@@ -24,8 +24,10 @@ class App extends Component {
 			<div>
 				<Header />
 				<Landing />
-				<Name />
-				<SaveButton />
+				<Row noGutters>
+					<Name />
+					<SaveButton />
+				</Row>
 				<div className='markdown'>
 					<Row noGutters>	
 						<Markdown />
