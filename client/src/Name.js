@@ -15,25 +15,21 @@ class Name extends Component {
 		this.props.changeName(event.target.value);
 	}
 
-	render() {
-		let keySpan = <span>(document key: {this.props.result.passkey})</span>;
-		
-
+	render() {		
 		return (
-			<Col>
-		<div className='name'>
-			<p>DOCUMENT NAME {keySpan}</p>
-			<input className='user-text-box' value={this.props.docName.docName} onChange={this.handleChange}/>
-		</div>
-		</Col>
+			<Col md="4">
+				<div className='name'>
+					<p>DOCUMENT NAME </p>
+					<input className='user-text-box' value={this.props.docName.docName} onChange={this.handleChange}/>
+				</div>
+			</Col>
 		);
 	}
 }
 
 const mapStateToProps = ( state ) => {   
 	return { 
-		docName: state.docName,		
-		result: state.changeMarkdown.markdown[state.changeMarkdown.markdown.length-1]
+		docName: state.docName,
 	}
 };
 

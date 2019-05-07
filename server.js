@@ -73,7 +73,7 @@ app.get("/api/get-file", (req, res) => {
 	});
 });
 
-//this method overwrites existing data in our database
+//this method overwrites existing entries in our database
 app.post("/api/save-file", (req, res) => {
 	var passkey = req.query.passkey;
 	var update = req.query.update;

@@ -69,7 +69,7 @@ export const markdownReducer = (state = {userMarkdown: defaultMarkdown}, action)
 	}
 };
 
-export const passkeyReducer = (state = {passkey: 'none'}, action) => {
+export const passkeyReducer = (state = {passkey: ''}, action) => {
   switch (action.type) {
     case CHANGEPASSKEY:
       if (action.passkey.length<13) {        
@@ -82,7 +82,7 @@ export const passkeyReducer = (state = {passkey: 'none'}, action) => {
   }
 };
 
-export const putMarkdownReducer = (state = {loading: false, markdown: [{passkey:'none'}], error: null}, action) => {
+export const putMarkdownReducer = (state = {loading: false, markdown: [{passkey:''}], error: null}, action) => {
   switch (action.type) {
     case PUT_MARKDOWN_STARTED:
       return {

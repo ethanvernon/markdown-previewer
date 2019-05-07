@@ -35,7 +35,7 @@ class SaveButton extends Component {
 		}
 
 		return (
-			<Col>
+			<Col md="4">
 				<div className='saveButton'>
 					{ button }
 				</div>

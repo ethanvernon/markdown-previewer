@@ -28,8 +28,8 @@ class App extends Component {
 				<div className='nameAndSave'>
 					<Row>
 						<Name />
-						<SaveButton />
 						<Passkey />
+						<SaveButton />
 					</Row>
 				</div>
 				<div className='markdown'>

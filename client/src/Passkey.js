@@ -16,20 +16,22 @@ class Passkey extends Component {
 	}
 
 	render() {
+
 		return (
-		<Col>
-			<div className='name'>
-				<span>PASSKEY: </span>
-				<input className='user-passkey' placeholder={this.props.passkey} onChange={this.handleChange}/>
-			</div>
-		</Col>
+			<Col md="4">
+				<div className='name'>
+					<span>PASSKEY: </span>
+					<input className='user-passkey' value={this.props.passkey} onChange={this.handleChange}/>
+				</div>
+			</Col>
 		);
 	}
 }
 
 const mapStateToProps = ( state ) => {   
 	return { 
-		passkey: state.changePasskey.passkey
+		passkey: state.changePasskey.passkey,
+		result: state.changeMarkdown.markdown[state.changeMarkdown.markdown.length-1]
 	}
 };
 

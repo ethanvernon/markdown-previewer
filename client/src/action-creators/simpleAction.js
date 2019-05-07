@@ -41,6 +41,7 @@ export const putMarkdown = (markdown) => {
 		})
 		.then(res => {
 			dispatch(putMarkdownSucess(res.data));
+			dispatch(changePasskey(res.data.passkey));
 		})
 		.catch(err => {
 			dispatch(putMarkdownFailure(err.message));

@@ -84,11 +84,19 @@ $labelSize:11px;
 }
 
 .nameAndSave {
-
   margin-top:15px;
   margin-left:40px;
   margin-bottom:20px;
-    .name {
+  .saveButton {
+    display: flex;
+    justify-content: center;
+    margin-top:5px;
+    margin-bottom:5px;
+    button {
+      width:100px;
+    }
+  }
+  .name {
     color: $gray;
     font-size: $labelSize;
     letter-spacing:1px;
