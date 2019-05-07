@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import './App.scss';
 import { Button } from 'reactstrap';
 import { putMarkdown } from './action-creators/simpleAction';
+import { Col } from 'reactstrap';
 
 class SaveButton extends Component {
 	constructor(props) {
@@ -34,9 +35,11 @@ class SaveButton extends Component {
 		}
 
 		return (
-			<div>
-				{ button }
-			</div>
+			<Col>
+				<div className='saveButton'>
+					{ button }
+				</div>
+			</Col>
 		);
 	}
 };

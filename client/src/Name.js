@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { changeName } from './action-creators/simpleAction';
 import './App.scss';
+import { Col } from 'reactstrap';
 
 class Name extends Component {
 	constructor(props) {
@@ -23,10 +24,12 @@ class Name extends Component {
 		}
 
 		return (
+			<Col>
 		<div className='name'>
 			<p>DOCUMENT NAME {keySpan}</p>
 			<input className='user-text-box' value={this.props.docName.docName} onChange={this.handleChange}/>
 		</div>
+		</Col>
 		);
 	}
 }
