@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './App.scss';
 import { Button } from 'reactstrap';
-import { putMarkdown } from './action-creators/simpleAction';
+import { getMarkdown } from './action-creators/simpleAction';
 import { Col } from 'reactstrap';
 
 class LoadButton extends Component {
@@ -12,7 +12,8 @@ class LoadButton extends Component {
 	}
 
 	handleClick() {
-		this.props.getMarkdown(this.props.passkey.passkey);
+		console.log('searching for markdown with passkey: '+this.props.passkey)
+		this.props.getMarkdown(this.props.passkey);
 	}
 
 	render() {
@@ -21,38 +22,37 @@ class LoadButton extends Component {
 
 		if (isLoading) {
 			button = (
-				 <Button color='primary'>
-				 	Saving...
+				 <Button color='secondary'>
+				 	Loading...
 				 </Button>
 			);
 		} else {
 			button = (
-				<Button color='primary' onClick={this.handleClick}>
-					Save
+				<Button color='secondary' onClick={this.handleClick}>
+					Load
 				</Button>
 			);
 		}
 
 		return (
-			<Col>
-				<div className='saveButton'>
-					{ button }
-				</div>
-			</Col>
+			<div className='loadAndSaveButton'>
+				{ button }
+			</div>
 		);
 	}
 };
 
 const mapStateToProps = ( state ) => {   
 	return { 
-		loading: state.loadMarkdown.loading
+		loading: state.loadedMarkdown.loading, 
+		passkey: state.changePasskey.passkey,
 	}
 };
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		getMarkdown: (passkey) => {
-			dispatch(getMarkdown(passkey))
+		getMarkdown: (markdown) => {
+			dispatch(getMarkdown(markdown))
 		}
 	}
 };

@@ -9,10 +9,10 @@ class OutputBox extends Component {
 	constructor(props) {
 		super(props);
 
-		this.setMarkdownDispaly = this.setMarkdownDispaly.bind(this);
+		this.setMarkdownDisplay = this.setMarkdownDisplay.bind(this);
 	}
 
-	setMarkdownDispaly() {
+	setMarkdownDisplay() {
 		let rawMarkup=marked(this.props.userMarkdown.userMarkdown, {sanitize:true, breaks:true});
 		return { __html: rawMarkup };
 	}
@@ -23,7 +23,7 @@ class OutputBox extends Component {
 				<div className='label preview-label'>
 					PREVIEW
 				</div>
-				<div className='markdown-output' dangerouslySetInnerHTML={this.setMarkdownDispaly()} />
+				<div className='markdown-output' dangerouslySetInnerHTML={this.setMarkdownDisplay()} />
 			</Col>
 					
 		);

@@ -1,4 +1,13 @@
-import { CHANGENAME, CHANGEMARKDOWN, PUT_MARKDOWN_SUCCESS, PUT_MARKDOWN_FAILURE, PUT_MARKDOWN_STARTED, CHANGEPASSKEY } from '../action-creators/simpleAction';
+import { 
+  CHANGENAME, 
+  CHANGEMARKDOWN, 
+  PUT_MARKDOWN_SUCCESS, 
+  PUT_MARKDOWN_FAILURE, 
+  PUT_MARKDOWN_STARTED, 
+  CHANGEPASSKEY,
+  GET_MARKDOWN_STARTED,
+  GET_MARKDOWN_SUCCESS,
+  GET_MARKDOWN_FAILURE } from '../action-creators/simpleAction';
 
 var defaultMarkdown = `# Welcome to my React/Redux Markdown Previewer!
 
@@ -97,6 +106,31 @@ export const putMarkdownReducer = (state = {loading: false, markdown: [{passkey:
         markdown: [...state.markdown, action.payload]
       };
     case PUT_MARKDOWN_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload.error
+      };
+    default:
+      return state;
+  }
+}
+
+export const getMarkdownReducer = (state = {loading: false, markdown: [{passkey:''}], error: null}, action) => {
+  switch (action.type) {
+    case GET_MARKDOWN_STARTED:
+      return {
+        ...state,
+        loading: true
+      };
+    case GET_MARKDOWN_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        error: null,
+        markdown: [...state.markdown, action.payload]
+      };
+    case GET_MARKDOWN_FAILURE:
       return {
         ...state,
         loading: false,

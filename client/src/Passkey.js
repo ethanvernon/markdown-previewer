@@ -18,11 +18,11 @@ class Passkey extends Component {
 	render() {
 
 		return (
-			<Col md="4">
-				<div className='name'>
-					<span>PASSKEY: </span>
-					<input className='user-passkey' value={this.props.passkey} onChange={this.handleChange}/>
-				</div>
+			<Col sm="4" className='name'>
+				<div className='vertical-outer'>
+					<span className='input-label passkey-label'>PASSKEY</span>
+					<input className='user-text-box' placeholder='Enter passkey to load' value={this.props.passkey} onChange={this.handleChange}/>
+				</div>				
 			</Col>
 		);
 	}

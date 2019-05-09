@@ -5,10 +5,11 @@ import Name from './Name';
 import {Header} from './Header';
 import Markdown from './Markdown';
 import OutputBox from './OutputBox';
-import { Container, Row } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import { Landing } from './Landing';
 import { Footer } from './Footer';
 import SaveButton from './SaveButton';
+import LoadButton from './LoadButton';
 import Passkey from './Passkey';
 
 class App extends Component {
@@ -26,10 +27,13 @@ class App extends Component {
 				<Header />
 				<Landing />
 				<div className='nameAndSave'>
-					<Row>
+					<Row className='headRow'>
 						<Name />
 						<Passkey />
-						<SaveButton />
+						<Col sm="4">
+							<SaveButton />
+							<LoadButton />
+						</Col>
 					</Row>
 				</div>
 				<div className='markdown'>

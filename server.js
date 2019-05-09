@@ -58,18 +58,22 @@ app.post("/api/new-file", function(req,res) {
 //get request for user's markdown
 app.get("/api/get-file", (req, res) => {
 
-	var user=req.query.user;
-	var passkey=req.query.passkey;
+	console.log('recieved get request');
 
+	var passkey=req.query.passkey;
+	console.log(req.query);
 	var query = Files.find();
 
-	query=query.where("user").equals(user);
 	query=query.where("passkey").equals(passkey);
 
 	query.exec((err, data) => {
 		if (err) throw err;	
-		//var dataResponse=JSON.parse(data);
-		res.json(data);
+		console.log("success, response is: " + data);
+		let condensedResponse = {
+			"passkey": data.passkey,
+			"markdown": data.markdown
+		};
+		return res.json(data);
 	});
 });
 

@@ -83,37 +83,55 @@ $labelSize:11px;
   cursor:pointer;
 }
 
+
+.headRow {  
+  display:flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+
 .nameAndSave {
-  margin-top:15px;
-  margin-left:40px;
-  margin-bottom:20px;
-  .saveButton {
+  margin-top:$labelSize*2;
+  margin-bottom:$labelSize*2;
+  button {
+    width:100px;
+    font-size: $labelSize;
+  }
+  .loadAndSaveButton {
     display: flex;
     justify-content: center;
     margin-top:5px;
     margin-bottom:5px;
-    button {
-      width:100px;
-    }
   }
   .name {
-    color: $gray;
-    font-size: $labelSize;
-    letter-spacing:1px;
-    .user-text-box {
-      margin-left:7px;
+    .vertical-outer {
+      display:flex;
+      justify-content: center;
+      flex-direction: column;
+      height:$labelSize*5;
+      align-items: center;
     }
-    p {
+    .vertical-outer-stacked {
+      display:flex;
+      justify-content: center;
+      flex-direction: column;
+      height:$labelSize*5;
+      align-items: center;
+    }
+    .input-label {
       margin-bottom:1px;
+      color: $gray;
+      font-size: $labelSize;
+      letter-spacing:1px;
+    }    
+    .passkey-label {
     }
-    input {
+    .user-text-box {
       color: $black;
       border:0px;
-      font-size:17px;
-    }
-    input:focus {
-      outline:none;
+      font-size:$labelSize*2;
+      text-align: center;
     }
   }
 }
-

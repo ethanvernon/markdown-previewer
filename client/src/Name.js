@@ -17,9 +17,9 @@ class Name extends Component {
 
 	render() {		
 		return (
-			<Col md="4">
-				<div className='name'>
-					<p>DOCUMENT NAME </p>
+			<Col sm="4" className='name'>
+				<div className='vertical-outer-stacked'>
+					<p className='input-label'>DOCUMENT NAME </p>
 					<input className='user-text-box' value={this.props.docName.docName} onChange={this.handleChange}/>
 				</div>
 			</Col>
